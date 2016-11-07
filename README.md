@@ -2,3 +2,5 @@
 
 ### Wireframes
 
+[here](docs/wireframes.pdf)
+
