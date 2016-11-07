@@ -1,0 +1,32 @@
+{
+  "name": "Grocery-Guru",
+  "version": "1.0.0",
+  "description": "### Wireframes can be found [here](wireframes.pdf).",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klunghamer/Grocery-Guru.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klunghamer/Grocery-Guru/issues"
+  },
+  "homepage": "https://github.com/klunghamer/Grocery-Guru#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.6.6",
+    "mongoose-validate": "0.0.5",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0"
+  }
+}
