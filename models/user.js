@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
 var validate = require('mongoose-validate');
-var PlaceSchema = require('./place').schema;
+var ItemSchema = require('./item').schema;
 var passportLocalMongoose = require('passport-local-mongoose');
 
 var UserSchema = new mongoose.Schema({
-  username: String,
-  email: { type: String, required: true, validate: [validate.email, 'invalid email address'] }
+  username: { type: String, required: true},
+  email: { type: String, required: true, validate: [validate.email, 'invalid email address']},
   password: String,
-  itemsToFind: [PlaceSchema],
-  itemsInCart: [PlaceSchema]
+  itemsToFind: [ItemSchema],
+  itemsInCart: [ItemSchema]
 })
 
 UserSchema.plugin(passportLocalMongoose);

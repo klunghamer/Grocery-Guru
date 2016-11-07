@@ -8,6 +8,8 @@ var LocalStrategy  = require('passport-local').Strategy;
 var methodOverride = require('method-override');
 // var User           = require('./models/user'),
 var app            = express();
+var User           = require('./models/user');
+var Item           = require('./models/item')
 
 mongoose.Promise = global.Promise;
 
