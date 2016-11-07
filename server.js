@@ -9,7 +9,7 @@ var methodOverride = require('method-override');
 // var User           = require('./models/user'),
 var app            = express();
 var User           = require('./models/user');
-var Item           = require('./models/item')
+var Item           = require('./models/item');
 
 mongoose.Promise = global.Promise;
 
@@ -19,15 +19,36 @@ app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.static('public'));
 
-app.get('/', function(res, req){
-  res.render('index');
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', function(err) {
+  console.log(err);
+})
+db.once('open', function() {
+  console.log('Database Connected!');
 })
 
+var mongoURI = 'mongodb://localhost/grocery-guru';
+mongoose.connect(mongoURI);
+
+
+app.use(require('express-session')({
+  secret: 'harbaugh',
+  resave: false,
+  saveUninitialized: false
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 //Controllers
-// var usersController = require('./controllers/users.js');
+var usersController = require('./controllers/users.js');
 
 //Routes
-// app.use('/users', usersController);
+app.use('/users', usersController);
 
 app.listen(port, function() {
     console.log('=======================');
