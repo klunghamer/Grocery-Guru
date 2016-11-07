@@ -1,6 +1,4 @@
 # Grocery-Guru
 
-### Wireframes
-
-[here](wireframes.pdf)
+### Wireframes can be found [here](wireframes.pdf).
 
