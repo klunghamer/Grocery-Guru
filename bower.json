@@ -1,0 +1,19 @@
+{
+  "name": "Grocery-Guru",
+  "description": "### Wireframes can be found [here](wireframes.pdf).",
+  "main": "server.js",
+  "license": "ISC",
+  "homepage": "https://github.com/klunghamer/Grocery-Guru",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "ui-router#^0.3.2",
+    "jquery": "^3.1.1"
+  }
+}

@@ -2,7 +2,7 @@ var express        = require('express');
 var bodyParser     = require('body-parser');
 var mongoose       = require('mongoose');
 var logger         = require('morgan');
-var port           = 3000 || process.env.PORT;
+var port           = 4000 || process.env.PORT;
 var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
 var methodOverride = require('method-override');
@@ -18,6 +18,8 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.static('public'));
+
+app.use('/scripts', express.static(__dirname + '/bower_components'))
 
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
