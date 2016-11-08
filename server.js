@@ -48,9 +48,11 @@ passport.deserializeUser(User.deserializeUser());
 
 //Controllers
 var usersController = require('./controllers/users.js');
+var helpersController = require('./controllers/helpers.js');
 
 //Routes
 app.use('/users', usersController);
+app.use('/helpers', helpersController);
 
 app.listen(port, function() {
     console.log('=======================');

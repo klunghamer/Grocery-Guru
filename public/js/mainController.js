@@ -116,6 +116,21 @@
       })
     }
 
+    this.findStores = function() {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        return $http({
+          url: `/helpers/stores/${latitude}/${longitude}`,
+          method: 'GET'
+        })
+        .then(function(response) {
+          console.log(response);
+          // console.log('latitude', latitude);
+        })
+      });
+    }
+
 
   }); //controller closure
 })()

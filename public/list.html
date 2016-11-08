@@ -1,6 +1,10 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $('ul.tabs').tabs();
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+    });
   });
 </script>
 <!-- <a ui-sref="list.find" ui-sref-active='active'>Find</a>
@@ -31,3 +35,4 @@
   <a ui-sref="list.add" ui-sref-active='active'>Add Item</a>
 </div>
 <div ui-view></div>
+<a class="waves-effect waves-light btn" ng-click="main.findStores()"><i class="material-icons">check</i></a>

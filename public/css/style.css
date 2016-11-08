@@ -1,3 +1,12 @@
+html {
+  font-family: 'Itim', cursive;
+}
+
+#map {
+  height: 400px;
+}
+
+
 /*MAIN PROFILE PAGE*/
 
 #tabs {
