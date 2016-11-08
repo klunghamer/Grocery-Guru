@@ -21,11 +21,17 @@
     <div ng-controller="MainController as main">
         <div class="navbar-fixed">
           <ul id="dropdown1" class="dropdown-content">
-            <li><a ui-sref='home' ui-sref-active='active'>Home</a></li>
-            <li class="divider"></li>
-            <li><a ui-sref='login' ui-sref-active='active'>Log in</a></li>
-            <li class="divider"></li>
-            <li><a ui-sref='signup' ui-sref-active='active'>Sign up</a></li>
+              <li><a ui-sref='home' ui-sref-active='active'>Home</a></li>
+            <div ng-hide="main.user">
+              <li class="divider"></li>
+              <li><a ui-sref='signup' ui-sref-active='active'>Sign up</a></li>
+              <li class="divider"></li>
+              <li><a ui-sref='login' ui-sref-active='active'>Log in</a></li>
+            </div>
+            <div ng-show="main.user">
+              <li class="divider"></li>
+              <li><a ng-click="main.logout(site.user)">Log out</a></li>
+            </div>
           </ul>
           <nav>
             <div class="nav-wrapper">

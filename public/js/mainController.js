@@ -28,12 +28,26 @@
         data: user
       })
       .then(function(response) {
-        console.log(response);
         self.user = response.data.user;
+        console.log(self.user);
         $state.go('list', {ur: '/list'})
       })
       .catch(function(err) {
         console.log(err);
+      })
+    }
+
+    this.logout = function(user) {
+      return $http({
+        url:'/users/logout',
+        method: 'DELETE',
+        data: user
+      })
+      .then(function(response) {
+        console.log(response);
+        if (response.data.status === 200) {
+          self.user = null;
+        }
       })
     }
 
