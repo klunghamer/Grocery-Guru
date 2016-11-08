@@ -1,0 +1,15 @@
+/*MAIN PROFILE PAGE*/
+
+#tabs {
+  min-height: 40vh;
+}
+
+#find, #cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list-padding {
+  padding: .5em;
+}

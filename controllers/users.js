@@ -57,12 +57,29 @@ router.post('/', function(req, res){
   })
 })
 
-//Delete item from list
+//Delete item from Items to Find
 router.delete('/:id', function(req, res) {
   console.log('params>', req.params.id);
   User.findOne({username: req.session.passport.user}).exec()
   .then(function(user){
     var item = user.itemsToFind.id(req.params.id);
+    item.remove();
+    return user.save();
+  })
+  .then(function(user){
+    res.json({ user : user });
+  })
+  .catch(function(err){
+    console.log(err);
+  })
+})
+
+//Delete item from Items in Cart
+router.delete('/cart/:id', function(req, res) {
+  console.log('params>', req.params.id);
+  User.findOne({username: req.session.passport.user}).exec()
+  .then(function(user){
+    var item = user.itemsInCart.id(req.params.id);
     item.remove();
     return user.save();
   })

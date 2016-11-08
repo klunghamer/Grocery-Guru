@@ -4,27 +4,29 @@
     $('select').material_select();
   })
 </script>
-<h2>Add Item:</h2>
-<div class="row">
-    <form class="col s12" ng-submit="main.addItem(item)">
-      <div class="row">
-        <div class="input-field col s12 m6">
-          <select ng-model="item.category">
-            <option value="" disabled selected>Choose a category</option>
-            <option value="beverages">Beverages</option>
-            <option value="bakery">Bakery</option>
-            <option value="dairy">Dairy</option>
-            <option value="meat">Meat</option>
-            <option value="produce">Produce</option>
-            <option value="baking goods">Baking Goods</option>
-            <option value="frozen">Frozen</option>
-          </select>
-          <label>Category</label>
+<div class="container">
+  <h4>Add Item:</h4>
+  <div class="row">
+      <form class="col s12" ng-submit="main.addItem(item)">
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <select ng-model="item.category">
+              <option value="" disabled selected>Choose a category</option>
+              <option value="beverages">Beverages</option>
+              <option value="bakery">Bakery</option>
+              <option value="dairy">Dairy</option>
+              <option value="meat">Meat</option>
+              <option value="produce">Produce</option>
+              <option value="baking goods">Baking Goods</option>
+              <option value="frozen">Frozen</option>
+            </select>
+            <label>Category</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input type="text" class="validate" ng-model="item.name">
+            <label for="username">Item</label>
+          </div>
         </div>
-        <div class="input-field col s12 m6">
-          <input type="text" class="validate" ng-model="item.name">
-          <label for="username">Item</label>
-        </div>
-      </div>
-      <button class="btn waves-effect waves-light blue-grey lighten-3" type="submit" name="action">Add to list!</button>
-    </form>
+        <button class="btn waves-effect waves-light blue-grey lighten-3" type="submit" name="action">Add to list!</button>
+      </form>
+</div>

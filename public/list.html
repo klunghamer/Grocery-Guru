@@ -7,7 +7,7 @@
 <a ui-sref="list.cart" ui-sref-active='active'>Cart</a> -->
 
 <div class="container">
-  <div class="row">
+  <div id="tabs" class="row">
     <div class="col s12">
       <ul class="tabs">
         <li class="tab col s6"><a class="active" href="#test1">Items to Find</a></li>
@@ -15,15 +15,16 @@
       </ul>
     </div>
     <div id="test1" class="col s6">
-      <div ng-repeat="item in main.user.itemsToFind">
-        {{item.name}}
-        <a class="waves-effect waves-light btn-flat" ng-click="main.moveToCart(item, $index)"><i class="material-icons">check</i></a><a class="waves-effect waves-light btn-flat" ng-click="main.deleteFromToFind(item, $index)">Delete</a>
+      <div id='find' ng-repeat="item in main.user.itemsToFind">
+        <div class="list-padding">{{item.name}}</div>
+        <div><a class="waves-effect waves-light btn-flat" ng-click="main.moveToCart(item, $index)"><i class="material-icons right">check</i>Done</a></div>
+        <div><a class="waves-effect waves-light btn-flat" ng-click="main.deleteFromToFind(item, $index)"><i class="material-icons">close</i></a></div>
       </div>
     </div>
     <div id="test2" class="col s6 offset-s6">
-      <div ng-repeat="item in main.user.itemsInCart">
-        {{item.name}}
-        <a class="waves-effect waves-light btn">Delete</a>
+      <div id='cart' ng-repeat="item in main.user.itemsInCart">
+        <div class="list-padding">{{item.name}}</div>
+        <a class="waves-effect waves-light btn-flat" ng-click="main.deleteFromInCart(item, $index)"><i class="material-icons">close</i></a>
       </div>
     </div>
   </div>

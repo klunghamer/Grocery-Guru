@@ -83,6 +83,21 @@
       })
     }
 
+    this.deleteFromInCart = function(item, index) {
+      console.log(item);
+      return $http({
+        url: `/users/cart/${item._id}`,
+        method: 'DELETE',
+      })
+      .then(function(response){
+        console.log(response);
+        self.user.itemsInCart.splice(index, 1);
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
+    }
+
     this.moveToCart = function(item, index) {
       console.log('item>', item);
       console.log('index>', index);
