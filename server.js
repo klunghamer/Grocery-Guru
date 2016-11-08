@@ -30,7 +30,7 @@ db.once('open', function() {
   console.log('Database Connected!');
 })
 
-var mongoURI = 'mongodb://localhost/grocery-guru';
+var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/grocery-guru';
 mongoose.connect(mongoURI);
 
 
