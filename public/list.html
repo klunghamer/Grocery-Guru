@@ -17,7 +17,7 @@
     <div id="test1" class="col s6">
       <div ng-repeat="item in main.user.itemsToFind">
         {{item.name}}
-        <div class="chip">Done<i class="close material-icons">check</i></div><a class="waves-effect waves-light btn-flat" ng-click="main.deleteFromToFind(item, $index)">Delete</a>
+        <a class="waves-effect waves-light btn-flat" ng-click="main.moveToCart(item, $index)"><i class="material-icons">check</i></a><a class="waves-effect waves-light btn-flat" ng-click="main.deleteFromToFind(item, $index)">Delete</a>
       </div>
     </div>
     <div id="test2" class="col s6 offset-s6">

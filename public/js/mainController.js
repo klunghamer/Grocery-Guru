@@ -69,7 +69,7 @@
     }
 
     this.deleteFromToFind = function(item, index) {
-      console.log(item);
+      // console.log(item);
       return $http({
         url: `/users/${item._id}`,
         method: 'DELETE',
@@ -77,12 +77,30 @@
       .then(function(response){
         console.log(response);
         self.user.itemsToFind.splice(index, 1);
-        // $state.go('list', {ur: '/list'});
       })
       .catch(function(err) {
         console.log(err);
       })
     }
+
+    this.moveToCart = function(item, index) {
+      console.log('item>', item);
+      console.log('index>', index);
+      return $http({
+        url: `/users/${item._id}`,
+        method: 'PUT',
+        data: item
+      })
+      .then(function(response){
+        console.log(response);
+        self.user.itemsToFind.splice(index, 1);
+        self.user.itemsInCart.push(item);
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
+    }
+
 
   }); //controller closure
 })()
