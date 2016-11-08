@@ -41,7 +41,7 @@
     // $locationProvider.html5Mode({
     //   enabled: true,
     //   requireBase: false
-    // }); //locationProvider
+    // })
 
   } //MainRouter closure
 })()
