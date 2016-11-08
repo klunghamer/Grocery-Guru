@@ -2,7 +2,7 @@ var express        = require('express');
 var bodyParser     = require('body-parser');
 var mongoose       = require('mongoose');
 var logger         = require('morgan');
-// var port           = 4000 || process.env.PORT;
+var port           = 4000 || process.env.PORT;
 var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
 var methodOverride = require('method-override');
@@ -52,7 +52,7 @@ var usersController = require('./controllers/users.js');
 //Routes
 app.use('/users', usersController);
 
-app.listen(4000 || process.env.PORT, function() {
+app.listen(port, function() {
     console.log('=======================');
     console.log('Running on port ' + port);
     console.log('=======================');
