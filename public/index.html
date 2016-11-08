@@ -14,6 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $(".dropdown-button").dropdown();
+        $('select').material_select();
       })
     </script>
   </head>
@@ -32,6 +33,8 @@
               <li class="divider"></li>
               <li><a ng-click="main.logout(site.user)">Log out</a></li>
             </div>
+              <li class="divider"></li>
+              <li><a ui-sref='list' ui-sref-active='active'>Shop</a></li>
           </ul>
           <nav>
             <div class="nav-wrapper">

@@ -36,6 +36,27 @@ router.delete('/logout', function (req,res) {
   res.json({status: 200});
 });
 
+//Add item to list
+router.post('/', function(req, res){
+  console.log(req.body);
+  var user = req.session.passport.user;
+  User.find({username: user}).exec()
+  .then(function(user){
+    console.log(user);
+    user[0].itemsInCart.push({
+      name: req.body.name,
+      category: req.body.category
+    })
+    return user[0].save();
+  })
+  .then(function(user) {
+    res.json({ user : user });
+  })
+  .catch(function(err) {
+    console.log(err);
+  })
+})
+
 
 
 

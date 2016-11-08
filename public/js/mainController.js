@@ -51,5 +51,19 @@
       })
     }
 
+    this.addItem = function(item) {
+      return $http({
+        url: '/users',
+        method: 'POST',
+        data: item
+      })
+      .then(function(response){
+        console.log(response);
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
+    }
+
   }); //controller closure
 })()

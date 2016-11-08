@@ -35,6 +35,10 @@
         url: '/cart',
         templateUrl: 'cart.html'
       })
+      .state('list.add', {
+        url: '/add',
+        templateUrl: 'add.html'
+      })
 
     $urlRouterProvider.otherwise('/');
 
