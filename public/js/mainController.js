@@ -3,6 +3,7 @@
   .module('grocery')
   .controller('MainController', function($http, $state){
     var self = this;
+    self.adding = false;
 
     this.signup = function (user) {
       console.log(user);
@@ -22,6 +23,7 @@
     }
 
     this.login = function(user) {
+      self.findStores();
       return $http({
         url: '/users/login',
         method: 'POST',
@@ -52,6 +54,10 @@
       })
     }
 
+    this.startAdd = function() {
+      self.adding = true;
+    }
+
     this.addItem = function(item) {
       return $http({
         url: '/users',
@@ -61,6 +67,7 @@
       .then(function(response){
         console.log(response);
         self.user.itemsToFind.push(item);
+        self.adding = false;
         $state.go('list', {ur: '/list'});
       })
       .catch(function(err) {
@@ -126,7 +133,10 @@
         })
         .then(function(response) {
           console.log(response);
-          // console.log('latitude', latitude);
+          self.store1 = response.data.results[0];
+          self.store2 = response.data.results[1];
+          self.store3 = response.data.results[2];
+          console.log(self.store3);
         })
       });
     }
