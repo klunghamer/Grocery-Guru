@@ -11,6 +11,9 @@ var app            = express();
 var User           = require('./models/user');
 var Item           = require('./models/item');
 
+//dotenv config
+require('dotenv').config();
+
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.urlencoded({ extended: true }));
