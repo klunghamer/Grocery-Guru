@@ -31,7 +31,7 @@
             </div>
             <div ng-show="main.user">
               <li class="divider"></li>
-              <li><a ng-click="main.logout(site.user)">Log out</a></li>
+              <li><a ng-click="main.logout(main.user)">Log out</a></li>
             </div>
               <li class="divider"></li>
               <li><a ui-sref='list' ui-sref-active='active'>Shop</a></li>
@@ -40,6 +40,7 @@
             <div class="nav-wrapper">
               <a href="#!" class="brand-logo center">Grocery Guru</a>
               <ul class="right hide-on-small-only">
+                <li class='nav-link' ng-show="main.user">Welcome, {{main.user.username}}</li>
                 <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
               </ul>
             </div>

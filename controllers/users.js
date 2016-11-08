@@ -43,7 +43,7 @@ router.post('/', function(req, res){
   User.find({username: user}).exec()
   .then(function(user){
     console.log(user);
-    user[0].itemsInCart.push({
+    user[0].itemsToFind.push({
       name: req.body.name,
       category: req.body.category
     })
@@ -53,6 +53,24 @@ router.post('/', function(req, res){
     res.json({ user : user });
   })
   .catch(function(err) {
+    console.log(err);
+  })
+})
+
+//Delete item from list
+router.delete('/:id', function(req, res) {
+  console.log('body???', req.body);
+  console.log('params>', req.params.id);
+  User.findOne({username: req.session.passport.user}).exec()
+  .then(function(user){
+    var item = user.itemsToFind.id(req.params.id);
+    item.remove();
+    return user.save();
+  })
+  .then(function(user){
+    res.json({ user : user });
+  })
+  .catch(function(err){
     console.log(err);
   })
 })

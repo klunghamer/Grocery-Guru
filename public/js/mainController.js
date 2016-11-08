@@ -30,7 +30,7 @@
       .then(function(response) {
         self.user = response.data.user;
         console.log(self.user);
-        $state.go('list', {ur: '/list'})
+        $state.go('list', {ur: '/list'});
       })
       .catch(function(err) {
         console.log(err);
@@ -47,6 +47,7 @@
         console.log(response);
         if (response.data.status === 200) {
           self.user = null;
+          $state.go('home', {ur: '/'});
         }
       })
     }
@@ -59,6 +60,24 @@
       })
       .then(function(response){
         console.log(response);
+        self.user.itemsToFind.push(item);
+        $state.go('list', {ur: '/list'});
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
+    }
+
+    this.deleteFromToFind = function(item, index) {
+      console.log(item);
+      return $http({
+        url: `/users/${item._id}`,
+        method: 'DELETE',
+      })
+      .then(function(response){
+        console.log(response);
+        self.user.itemsToFind.splice(index, 1);
+        // $state.go('list', {ur: '/list'});
       })
       .catch(function(err) {
         console.log(err);

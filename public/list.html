@@ -1,7 +1,32 @@
-this is the list
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
+</script>
+<!-- <a ui-sref="list.find" ui-sref-active='active'>Find</a>
+<a ui-sref="list.cart" ui-sref-active='active'>Cart</a> -->
 
-<a ui-sref="list.find" ui-sref-active='active'>Find</a>
-<a ui-sref="list.cart" ui-sref-active='active'>Cart</a>
-<a ui-sref="list.add" ui-sref-active='active'>Add Item</a>
-
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6"><a class="active" href="#test1">Items to Find</a></li>
+        <li class="tab col s6"><a href="#test2">Items in Cart</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s6">
+      <div ng-repeat="item in main.user.itemsToFind">
+        {{item.name}}
+        <div class="chip">Done<i class="close material-icons">check</i></div><a class="waves-effect waves-light btn-flat" ng-click="main.deleteFromToFind(item, $index)">Delete</a>
+      </div>
+    </div>
+    <div id="test2" class="col s6 offset-s6">
+      <div ng-repeat="item in main.user.itemsInCart">
+        {{item.name}}
+        <a class="waves-effect waves-light btn">Delete</a>
+      </div>
+    </div>
+  </div>
+  <a ui-sref="list.add" ui-sref-active='active'>Add Item</a>
+</div>
 <div ui-view></div>
