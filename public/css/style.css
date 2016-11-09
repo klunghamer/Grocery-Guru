@@ -1,5 +1,6 @@
 html {
   font-family: 'Itim', cursive;
+  color: #43a047;
 }
 
 #map {
@@ -11,15 +12,69 @@ html {
 
 #tabs {
   min-height: 40vh;
+  color: black;
+}
+
+ul.tabs > li.tab > a.active {
+  color: #43a047;
+}
+
+ul.tabs > li.tab > a {
+  color: #43a047;
+}
+
+ul.tabs > li.tab > a:hover {
+  color: #43a047;
+}
+
+.tabs .indicator {
+  color: #43a047;
+  background-color: #43a047 !important;
 }
 
 #find, #cart {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #a5d6a7;
+  background-color: white;
 }
 
 .list-padding {
   padding: .5em;
+}
+
+/*SIGNUP AND LOGIN*/
+.input-field label {
+  color: #43a047;
+}
+
+.input-field input[type=text]:focus + label {
+  color: #43a047;
+}
+
+.input-field input[type=password]:focus + label {
+  color: #43a047;
+}
+
+.input-field input[type=email]:focus + label {
+  color: #43a047;
+}
+
+.input-field input[type=password]:focus {
+ border-bottom: 1px solid #43a047;
+ box-shadow: 0 1px 0 0 #43a047;
+}
+
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #43a047;
+ box-shadow: 0 1px 0 0 #43a047;
+}
+
+.input-field input[type=email]:focus {
+ border-bottom: 1px solid #43a047;
+ box-shadow: 0 1px 0 0 #43a047;
+}
+
+.select-dropdown {
+  color: #43a047;
 }

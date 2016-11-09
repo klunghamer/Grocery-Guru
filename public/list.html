@@ -8,8 +8,8 @@
   <div id="tabs" class="row">
     <div class="col s12">
       <ul class="tabs green accent-1">
-        <li class="tab col s6"><a class="active" href="#test1">Items to Find</a></li>
-        <li class="tab col s6"><a href="#test2">Items in Cart</a></li>
+        <li class="tab col s6"><a class="active" class="green-text darken-1-text" href="#test1">Items to Find</a></li>
+        <li class="tab col s6"><a class="green-text darken-1-text" href="#test2">Items in Cart</a></li>
       </ul>
     </div>
     <div id="test1" class="col s6">
@@ -28,7 +28,7 @@
       </div>
     </div>
   </div>
-  <a ui-sref="list.add" ui-sref-active='active' ng-click="main.startAdd()" ng-hide="main.adding">Add Item</a>
+  <a ui-sref="list.add" ui-sref-active='active' ng-click="main.startAdd()" ng-hide="main.adding" class="green-text darken-1-text">Add Item</a>
   <div ui-view></div>
   <div class="row">
     <h2 class="col s12">Groceries Nearby:</h2>
