@@ -13,7 +13,7 @@ router.get('/location/:zip', function(req, res) {
   })
 })
 
-router.get('/stores/:lat/:long', function)
+// router.get('/stores/:lat/:long', function)
 // request(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=3000&type=grocery_or_supermarket&keyword=food&key=${process.env.GOOGLE_KEY}`, function (error, response, body) {
 //   if(!error && response.statusCode == 200) {
 //     var parse = JSON.parse(body);

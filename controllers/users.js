@@ -7,10 +7,11 @@ var User = require('../models/user');
 
 //SIGN UP
 router.post('/signup', function(req,res) {
-  // console.log(req.body);
+  console.log(req.body);
   User.register(new User({
     username: req.body.username,
-    email: req.body.email
+    email: req.body.email,
+    zipcode: req.body.zipcode
   }),
   req.body.password, function(err, user) {
     if (err) {
