@@ -5,6 +5,7 @@ var request = require('request');
 
 router.get('/stores/:lat/:long', function(req, res) {
   console.log('latitude>>', req.params.lat);
+  var lat = req.params.lat;
   // console.log('key>', process.env.GOOGLE_KEY);
   // console.log('longitude>>', req.params.long);
   // request(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${req.params.lat},${req.params.long}&radius=3000&type=grocery_or_supermarket&keyword=food&key=${process.env.GOOGLE_KEY}`, function (error, response, body) {
@@ -13,6 +14,7 @@ router.get('/stores/:lat/:long', function(req, res) {
   //     res.json(parse);
   //   }
   // })
+  res.json({test: lat})
 })
 
 
