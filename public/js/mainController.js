@@ -131,13 +131,13 @@
           url: `/helpers/stores/${latitude}/${longitude}`,
           method: 'GET'
         })
-        // .then(function(response) {
-        //   console.log(response);
-        //   self.store1 = response.data.results[0];
-        //   self.store2 = response.data.results[1];
-        //   self.store3 = response.data.results[2];
-        //   console.log(self.store3);
-        // })
+        .then(function(response) {
+          console.log(response);
+          // self.store1 = response.data.results[0];
+          // self.store2 = response.data.results[1];
+          // self.store3 = response.data.results[2];
+          // console.log(self.store3);
+        })
       });
     }
 
