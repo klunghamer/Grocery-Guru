@@ -93,7 +93,7 @@
     this.deleteFromInCart = function(item, index) {
       console.log(item);
       return $http({
-        url: `/users/cart/${item._id}`,
+        url: `/users/delete/${item._id}`,
         method: 'DELETE',
       })
       .then(function(response){
