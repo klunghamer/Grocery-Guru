@@ -27,14 +27,6 @@
         url: '/list',
         templateUrl: 'list.html',
       })
-      .state('list.find', {
-        url: '/find',
-        templateUrl: 'find.html'
-      })
-      .state('list.cart', {
-        url: '/cart',
-        templateUrl: 'cart.html'
-      })
       .state('list.add', {
         url: '/add',
         templateUrl: 'add.html'

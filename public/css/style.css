@@ -17,6 +17,7 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: #a5d6a7;
 }
 
 .list-padding {

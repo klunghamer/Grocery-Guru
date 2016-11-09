@@ -99,6 +99,12 @@ router.put('/:id', function(req, res) {
   User.findOne({username: req.session.passport.user}).exec()
   .then(function(user) {
     var item = user.itemsToFind.id(req.params.id);
+    for(var i = 0; i < user.itemsInCart.length; i++) {
+      if(user.itemsInCart[i] === null) {
+        user.itemsInCart.splice(i, 1);
+      }
+    }
+    console.log(user.itemsInCart);
     user.itemsInCart.push(item);
     for(var i = 0; i < user.itemsToFind.length; i++) {
       if(user.itemsToFind[i].id === req.params.id) {

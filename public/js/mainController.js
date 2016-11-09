@@ -92,6 +92,10 @@
 
     this.deleteFromInCart = function(item, index) {
       console.log(item);
+      if (!item._id) {
+        console.log('are you sure you want to delete?');
+        return item;
+      }
       return $http({
         url: `/users/delete/${item._id}`,
         method: 'DELETE',
@@ -145,6 +149,12 @@
           self.store2 = response.data.results[1];
           self.store3 = response.data.results[2];
         })
+        .catch(function(err) {
+          console.log(err);
+        })
+      })
+      .catch(function(err) {
+        console.log(err);
       })
     }
 
