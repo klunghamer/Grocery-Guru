@@ -16,7 +16,7 @@ router.get('/location/:zip', function(req, res) {
 router.get('/stores/:lat/:long', function(req, res) {
   console.log(req.params.lat);
   console.log(req.params.long);
-  request(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${req.params.lat},${req.params.long}&radius=3000&type=grocery_or_supermarket&key=${process.env.GOOGLE_KEY}`, function (error, response, body) {
+  request(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${req.params.lat},${req.params.long}&radius=5000&type=grocery_or_supermarket&key=${process.env.GOOGLE_KEY}`, function (error, response, body) {
     if(!error && response.statusCode == 200) {
       var parse = JSON.parse(body);
       res.json(parse);
