@@ -132,9 +132,19 @@
       })
       .then(function(response) {
         console.log(response);
-        self.latitude = response.data.results[0].geometry.location.lat;
-        self.longitude = response.data.results[0].geometry.location.lng;
-        console.log(self.latitude, self.longitude);
+        var latitude = response.data.results[0].geometry.location.lat;
+        var longitude = response.data.results[0].geometry.location.lng;
+        console.log(latitude, longitude);
+        return $http({
+          url: `/helpers/stores/${latitude}/${longitude}`,
+          method: 'GET'
+        })
+        .then(function(response) {
+          console.log(response);
+          self.store1 = response.data.results[0];
+          self.store2 = response.data.results[1];
+          self.store3 = response.data.results[2];
+        })
       })
     }
 
