@@ -35,6 +35,7 @@ ul.tabs > li.tab > a:hover {
 #find, #cart {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   background-color: white;
 }
@@ -77,4 +78,13 @@ ul.tabs > li.tab > a:hover {
 
 .select-dropdown {
   color: #43a047;
+}
+
+#stores {
+  padding: 1.5em;
+  padding-top: .5em;
+}
+
+#store1, #store2, #store3 {
+  color: black;
 }

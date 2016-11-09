@@ -12,14 +12,14 @@
         <li class="tab col s6"><a class="green-text darken-1-text" href="#test2">Items in Cart</a></li>
       </ul>
     </div>
-    <div id="test1" class="col s6">
+    <div id="test1" class="col s12 m6">
       <div id='find' ng-repeat="item in main.user.itemsToFind">
         <div class="list-padding">{{item.name}}</div>
         <div><a class="waves-effect waves-light btn-flat" ng-click="main.moveToCart(item, $index)"><i class="material-icons right">check</i>Done</a></div>
         <div><a class="waves-effect waves-light btn-flat" ng-click="main.deleteFromToFind(item, $index)"><i class="material-icons">close</i></a></div>
       </div>
     </div>
-    <div id="test2" class="col s6 offset-s6">
+    <div id="test2" class="col s12 m6 offset-m6">
       <div ng-repeat="item in main.user.itemsInCart">
         <span id='cart' ng-if="!(main.user.itemsInCart === null)">
           <div class="list-padding">{{item.name}}</div>
@@ -28,15 +28,22 @@
       </div>
     </div>
   </div>
-  <a ui-sref="list.add" ui-sref-active='active' ng-click="main.startAdd()" ng-hide="main.adding" class="green-text darken-1-text">Add Item</a>
-  <div ui-view></div>
   <div class="row">
-    <h3 class="col s12">Groceries Nearby:</h3>
+    <div class='col s12 m3'>
+      <button class="btn waves-effect waves-light green darken-1 white-text" ui-sref="list.add" ui-sref-active='active' ng-click="main.startAdd()" ng-hide="main.adding">Add Item</button>
+    </div>
+    <div class="col s12 m6">
+      <br><h7 class="animated flash" ng-hide="main.adding" id="start" ng-if="main.user.itemsToFind.length === 0">Click 'ADD ITEM' to get started on your list!</h7>
+    </div><br>
+    <div ui-view></div>
+  </div>
+  <div class="row white" id="stores">
+    <h5 class="col s12">Groceries in Your Zipcode ({{main.user.zipcode}}):</h5>
     <div class="col s12 m6">{{main.store1.name}}</div>
-    <div class="col s12 m6">{{main.store1.vicinity}}</div>
+    <div class="col s12 m6" id="store1">{{main.store1.vicinity}}</div>
     <div class="col s12 m6">{{main.store2.name}}</div>
-    <div class="col s12 m6">{{main.store2.vicinity}}</div>
+    <div class="col s12 m6" id="store2">{{main.store2.vicinity}}</div>
     <div class="col s12 m6">{{main.store3.name}}</div>
-    <div class="col s12 m6">{{main.store3.vicinity}}</div>
+    <div class="col s12 m6" id="store1">{{main.store3.vicinity}}</div>
   </div>
 </div>

@@ -75,6 +75,10 @@
       })
     }
 
+    this.back = function() {
+      self.adding = false;
+    }
+
     this.deleteFromToFind = function(item, index) {
       // console.log(item);
       return $http({

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
     <script src="js/app.js"></script>
     <script type="text/javascript">
@@ -36,8 +37,10 @@
               <li class="divider"></li>
               <li><a ng-click="main.logout(main.user)" class="green-text darken-1-text">Log out</a></li>
             </div>
+            <div ng-show="main.user">
               <li class="divider"></li>
               <li><a ui-sref='list' ui-sref-active='active' class="green-text darken-1-text">Shop</a></li>
+            </div>
           </ul>
           <nav>
             <div class="nav-wrapper green darken-1">
