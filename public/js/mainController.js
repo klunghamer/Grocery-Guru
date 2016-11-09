@@ -23,7 +23,6 @@
     }
 
     this.login = function(user) {
-      self.findStores();
       return $http({
         url: '/users/login',
         method: 'POST',
@@ -31,6 +30,7 @@
       })
       .then(function(response) {
         self.user = response.data.user;
+        self.findStores();
         console.log(self.user);
         $state.go('list', {ur: '/list'});
       })
@@ -124,9 +124,10 @@
     }
 
     this.findStores = function() {
-      var zip = 48301;
+      var zipcode = self.user.zipcode;
+      console.log('ZIP>>', zipcode);
       return $http({
-        url: `/helpers/location/${48301}`,
+        url: `/helpers/location/${zipcode}`,
         method: 'GET'
       })
       .then(function(response) {
