@@ -11,8 +11,8 @@ html {
 /*MAIN PROFILE PAGE*/
 
 #tabs {
-  min-height: 30vh;
-  color: black;
+  min-height: 20vh;
+  /*color: black;*/
 }
 
 ul.tabs > li.tab > a.active {
