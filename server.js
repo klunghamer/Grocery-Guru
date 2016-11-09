@@ -11,6 +11,8 @@ var app            = express();
 var User           = require('./models/user');
 var Item           = require('./models/item');
 
+// var requestIp = require('request-ip');
+
 //dotenv config
 require('dotenv').config();
 

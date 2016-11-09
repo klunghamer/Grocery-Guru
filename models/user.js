@@ -7,6 +7,7 @@ var UserSchema = new mongoose.Schema({
   username: { type: String, required: true},
   email: { type: String, required: true, validate: [validate.email, 'invalid email address']},
   password: String,
+  zipcode: Number,
   itemsToFind: [ItemSchema],
   itemsInCart: [ItemSchema]
 })

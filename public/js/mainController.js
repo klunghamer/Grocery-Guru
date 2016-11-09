@@ -124,21 +124,17 @@
     }
 
     this.findStores = function() {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
-        return $http({
-          url: `/helpers/stores/${latitude}/${longitude}`,
-          method: 'GET'
-        })
-        .then(function(response) {
-          console.log(response);
-          // self.store1 = response.data.results[0];
-          // self.store2 = response.data.results[1];
-          // self.store3 = response.data.results[2];
-          // console.log(self.store3);
-        })
-      });
+      var zip = 48301;
+      return $http({
+        url: `/helpers/location/${48301}`,
+        method: 'GET'
+      })
+      .then(function(response) {
+        console.log(response);
+        self.latitude = response.data.results[0].geometry.location.lat;
+        self.longitude = response.data.results[0].geometry.location.lng;
+        console.log(self.latitude, self.longitude);
+      })
     }
 
 
