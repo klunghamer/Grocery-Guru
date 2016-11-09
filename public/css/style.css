@@ -7,7 +7,6 @@ html {
   height: 400px;
 }
 
-
 /*MAIN PROFILE PAGE*/
 
 #tabs {
@@ -38,6 +37,10 @@ ul.tabs > li.tab > a:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: white;
+}
+
+#cart {
+  justify-content: space-around;
 }
 
 .list-padding {
