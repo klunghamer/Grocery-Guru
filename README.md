@@ -4,4 +4,4 @@
 
 ### ERDs
 
-![alt tag](https://github.com/klunghamer/Grocery-Guru/edit/master/ERD.png)
+![alt tag](https://github.com/klunghamer/Grocery-Guru/blob/master/ERD.png)
