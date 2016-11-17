@@ -31,6 +31,10 @@
         url: '/add',
         templateUrl: 'add.html'
       })
+      .state('zip', {
+        url: '/zip',
+        templateUrl: 'zip.html',
+      })
 
     $urlRouterProvider.otherwise('/');
 

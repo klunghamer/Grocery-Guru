@@ -162,6 +162,23 @@
       })
     }
 
+    this.editZip = function(user) {
+      console.log(user);
+      return $http({
+        url: `/users/zip/${self.user._id}`,
+        method: 'PUT',
+        data: user
+      })
+      .then(function(response) {
+        console.log(response);
+        self.findStores();
+        $state.go('list', {ur: '/list'});
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
+    }
+
 
   }); //controller closure
 })()

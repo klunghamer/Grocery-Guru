@@ -94,8 +94,8 @@ router.delete('/delete/:id', function(req, res) {
 
 //Move Item to Cart
 router.put('/:id', function(req, res) {
-  console.log('body???', req.body);
-  console.log('params>', req.params.id);
+  // console.log('body???', req.body);
+  // console.log('params>', req.params.id);
   User.findOne({username: req.session.passport.user}).exec()
   .then(function(user) {
     var item = user.itemsToFind.id(req.params.id);
@@ -111,6 +111,23 @@ router.put('/:id', function(req, res) {
         user.itemsToFind.splice(i, 1);
       }
     }
+    return user.save();
+  })
+  .then(function(user){
+    console.log(user);
+    res.json({ user : user });
+  })
+  .catch(function(err){
+    console.log(err);
+  })
+})
+
+//Edit user zipcode
+router.put('/zip/:id', function(req, res) {
+  console.log('body???', req.body);
+  User.findOne({username: req.session.passport.user}).exec()
+  .then(function(user){
+    user.zipcode = req.body.zipcode;
     return user.save();
   })
   .then(function(user){
